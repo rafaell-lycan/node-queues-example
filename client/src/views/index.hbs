@@ -1,0 +1,54 @@
+<div layout:fragment="content">
+  {{#if isStoreEnabled}}
+  <div class="store">
+    <h1 class="f1">Store</h1>
+    <div class="bg-near-white ph3 pv1">
+      <p class="sans-serif lh-copy measure">You can buy items.</p>
+    </div>
+    <div class="pv4">
+      <a href="/add/1"
+        class="f4 link br1 ba bw2 ph3 pv2 mb2 dib near-black b--near-black b hover-bg-near-black hover-white">
+        Buy 1 item
+      </a>
+      <a href="/add/10"
+        class="f4 link br1 ba bw2 ph3 pv2 mb2 dib near-black b--near-black b hover-bg-near-black hover-white">
+        Buy 10 items
+      </a>
+      <a href="/add/100"
+        class="f4 link br1 ba bw2 ph3 pv2 mb2 dib near-black b--near-black b hover-bg-near-black hover-white">
+        Buy 100 items
+      </a>
+    </div>
+  </div>
+  {{/if}}
+
+  {{#if isWorkerEnabled}}
+  <div class="worker">
+    <h2 class="f1">Admin</h2>
+    <div class="bg-near-white ph3 pv1">
+      <p class="sans-serif lh-copy measure">Store backend system.</p>
+    </div>
+    <ul class="pl0 list">
+      <li class="mv2"><span class="f6 ttu near-gray">Connected:</span> <span class="b">{{isConnected}}</span></li>
+      <li class="mv2"><span class="f6 ttu">Consuming from queue:</span> <span class="b">{{queueName}}</span></li>
+      <li class="mv2"><span class="f6 ttu">Worker name:</span> <span class="b">{{workerName}}</span></li>
+    </ul>
+    <div class="flex items-start">
+      <div class="bg-near-white w5 tc pv3 mr4">
+        <div class="f-headline b">{{queue.waiting}}</div>
+        <p class="f7 ttu b mb1">Pending jobs</p>
+        <p class="f7 ttu mt0">(from queue)</p>
+      </div>
+      <div class="bg-near-white w5 tc pv3">
+        <div class="f-headline b">{{queue.completed}}</div>
+        <p class="f7 ttu b mb1">Completed jobs</p>
+        <p class="f7 ttu mt0">&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</div>
+
+<script>
+  setTimeout(() => location.reload(), 1000);
+</script>

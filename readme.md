@@ -1,17 +1,19 @@
-Microservices study guide:
+# NodeJS Worker Example
 
-https://github.com/ssola/python-flask-microservice
-https://codepen.io/anon/pen/OdXJWW?editors=1100#anon-login
+This is just a proof of concept that uses Node.js and [Redis](https://redis.io/) as a queue to manage requests that should perform as background jobs: e.g: To buy something.
 
-#### Articles
-https://medium.freecodecamp.org/how-to-scale-microservices-with-message-queues-spring-boot-and-kubernetes-f691b7ba3acf
-https://medium.com/tech-tajawal/microservice-authentication-and-authorization-solutions-e0e5e74b248a
-https://www.linkedin.com/pulse/redis-vs-rabbitmq-message-broker-vishnu-kiran-k-v/
-https://medium.com/aws-activate-startup-blog/using-containers-to-build-a-microservices-architecture-6e1b8bacb7d1
-https://itnext.io/using-api-gateways-to-facilitate-your-transition-from-monolith-to-microservices-c08fe3489237
-https://hackernoon.com/getting-started-with-microservices-and-kubernetes-76354312b556
+One good practice to have communication between services/queues is by using an origin(where to reply) correlation identifier (initial job reference) sending across queues..
 
-#### Check:
-- https://github.com/max-arias/poe-currency-flipper/blob/master/routes/arena.js
-- https://github.com/Travel-Geocoding/travel-worker/blob/master/lib/job-manager/queue.js
-- https://github.com/Travel-Geocoding/travel-worker/blob/master/lib/job-processors/process-insert-route.js
+## Stack
+
+- Node >= 8.x
+- Express + Handlebars - Display the form and handle the HTTP requests
+- [Bull](https://github.com/OptimalBits/bull) - Redis based queue
+- [Bull Arena](https://github.com/bee-queue/arena) - UI for Bull queues
+
+## TODO
+
+- [ ] Add Unit Tests
+- [ ] Avoid DRY and put some SOLID
+- [ ] Refactor using Typescript?
+- [ ] Improve dockerfile/docker-compose.
