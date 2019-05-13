@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "client",
+    "script": "./app/server.js",
+    "watch": true
+  }, {
+    "name": "process-items",
+    "script": "./worker/processItems.js",
+    "watch": true
+  }],
+  "env": {
+    "QUEUE_NAME": "EXAMPLE_APP",
+    "PORT": 8080
+  }
+}
