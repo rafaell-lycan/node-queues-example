@@ -2,7 +2,14 @@
 
 This is just a proof of concept that uses Node.js and [Redis](https://redis.io/) as a queue to manage requests that should perform as background jobs: e.g: To buy something.
 
-One good practice to have communication between services/queues is by using an origin(where to reply) correlation identifier (initial job reference) sending across queues..
+One good practice to have communication between services/queues is by using an origin(where to reply) correlation identifier (initial job reference) sending across queues.
+
+## Env Variables
+
+- QUEUE_NAME - The queue to use on the app.
+- REDIS_URL - Self explanatory (Default: localhost)
+- TIMEOUT - The timeout to wait before check the queue again (Default: 1000 = 1s).
+- CONCURRENCY - Number of workers in concurrency (Default: 1).
 
 ## Stack
 
