@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix . && echo 'Lint complete.'"
   },
+  "pre-commit": ["lint"],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +22,10 @@
     "pino-pretty": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.1"
   }
 }
