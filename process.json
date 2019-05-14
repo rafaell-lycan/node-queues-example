@@ -1,11 +1,15 @@
 {
   "apps": [{
-    "name": "client",
+    "name": "app-ui",
     "script": "./app/server.js",
     "watch": true
   }, {
-    "name": "process-items",
+    "name": "process-items-job",
     "script": "./worker/processItems.js",
+    "watch": true
+  }, {
+    "name": "housekeeper-job",
+    "script": "./worker/cleanStorage.js",
     "watch": true
   }],
   "env": {
