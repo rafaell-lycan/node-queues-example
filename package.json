@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --fix . && echo 'Lint complete.'"
+    "lint": "eslint --fix . --cache"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.2.0",
     "nodemon": "^1.19.0",
     "prettier": "^1.17.1"
   }
