@@ -2,6 +2,8 @@
 
 This is just a proof of concept that uses Node.js and [Redis](https://redis.io/) as a queue to manage requests that should perform as background jobs: e.g: To buy something.
 
+![App Preview](assets/app-preview.jpeg)
+
 One good practice to have communication between services/queues is by using an origin(where to reply) correlation identifier (initial job reference) sending across queues.
 
 ## Env Variables
