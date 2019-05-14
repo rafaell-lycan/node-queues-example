@@ -11,4 +11,4 @@ RUN yarn global add pm2
 EXPOSE 8080
 
 # Run process via pm2
-CMD ["pm2-runtime", "start", "process.json"]
+CMD ["pm2-runtime", "start", "process_dev.json", "--env production"]
