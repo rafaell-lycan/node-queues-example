@@ -1,5 +1,5 @@
-const Arena = require("bull-arena");
-const router = require("express").Router();
+const Arena = require('bull-arena');
+const router = require('express').Router();
 
 const { QUEUE_NAME, REDIS_URL } = process.env;
 
@@ -8,15 +8,15 @@ const arena = Arena(
     queues: [
       {
         name: QUEUE_NAME,
-        hostId: "worker",
+        hostId: 'worker',
         url: REDIS_URL
       }
     ]
   },
   {
-    basePath: "/monitor",
+    basePath: '/monitor',
     disableListen: true
   }
 );
 
-module.exports = router.use("/", arena);
+module.exports = router.use('/', arena);

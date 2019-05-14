@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const { getQueue, getStats } = require("../../util/queueManager");
+const router = require('express').Router();
+const { getQueue, getStats } = require('../../util/queueManager');
 
 const { QUEUE_NAME } = process.env;
 
@@ -10,14 +10,14 @@ const queueParams = {
   isStoreEnabled: true,
   isWorkerEnabled: true,
   isConnected: true,
-  queueName: queue.name || "NONE",
-  workerName: queue.token || "NONE"
+  queueName: queue.name || 'NONE',
+  workerName: queue.token || 'NONE'
 };
 
-router.get("/", async (_, res) => {
+router.get('/', async (_, res) => {
   const stats = await getStats(queue);
 
-  res.render("index", { ...queueParams, queue: stats });
+  res.render('index', { ...queueParams, queue: stats });
 });
 
 module.exports = router;
