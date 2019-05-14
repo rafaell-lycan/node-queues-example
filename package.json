@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2-runtime start process.json --env production",
+    "start": "pm2-runtime start process_dev.json",
+    "start:server": "pm2-runtime start process_prod.json --env production",
+    "start:workers": "pm2-runtime start process_workers.json --env production",
     "lint": "eslint --fix . --cache"
   },
   "husky": {

@@ -1,0 +1,7 @@
+{
+  "apps": [{
+    "name": "app-ui",
+    "script": "./app/server.js",
+    "watch": true
+  }]
+}

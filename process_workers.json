@@ -1,0 +1,11 @@
+{
+  "apps": [, {
+    "name": "process-items-job",
+    "script": "./worker/processItems.js",
+    "watch": true
+  }, {
+    "name": "housekeeper-job",
+    "script": "./worker/cleanStorage.js",
+    "watch": true
+  }]
+}
