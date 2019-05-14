@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint --fix . && echo 'Lint complete.'"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "pino-pretty": "^3.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.1.0",
