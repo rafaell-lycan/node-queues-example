@@ -6,7 +6,10 @@ const handlebars = require('express-handlebars');
 require('dotenv').config();
 
 const logger = require('../util/logger');
-const { PORT = 3000, QUEUE_NAME, REDIS_URL } = process.env;
+const { PORT = 3000, QUEUE_NAME, REDIS_URL, SQREEN_TOKEN } = process.env;
+
+// Enable Sqreen to check app vulerabilities
+require('../util/sqreen')(SQREEN_TOKEN);
 
 const { createQueue, addListeners } = require('../util/queueManager');
 const queue = createQueue(QUEUE_NAME, REDIS_URL);

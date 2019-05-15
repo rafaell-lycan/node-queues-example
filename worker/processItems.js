@@ -3,7 +3,16 @@ require('dotenv').config();
 const logger = require('../util/logger');
 const { createQueue, addListeners } = require('../util/queueManager');
 
-const { QUEUE_NAME, TIMEOUT = 1000, CONCURRENCY = 1, REDIS_URL } = process.env;
+const {
+  QUEUE_NAME,
+  TIMEOUT = 1000,
+  CONCURRENCY = 1,
+  REDIS_URL,
+  SQREEN_TOKEN
+} = process.env;
+
+// Enable Sqreen to check app vulerabilities
+require('../util/sqreen')(SQREEN_TOKEN);
 
 // Create a Queue
 const queue = createQueue(QUEUE_NAME, REDIS_URL, {
